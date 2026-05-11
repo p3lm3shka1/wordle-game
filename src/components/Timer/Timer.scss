@@ -1,0 +1,8 @@
+@use "../../styles/variables" as *;
+
+.timer {
+  font-size: 32px;
+  padding: $space-sm 0;
+  color: $text;
+  text-align: center;
+}

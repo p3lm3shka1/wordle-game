@@ -1,0 +1,8 @@
+@use "../../styles/variables" as *;
+
+.solution {
+  font-size: 30px;
+  padding: $space-md 0;
+  color: $text;
+  text-align: center;
+}

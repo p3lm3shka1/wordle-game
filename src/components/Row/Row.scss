@@ -1,0 +1,72 @@
+@use "../../styles/variables" as *;
+
+.row {
+  @include flex-center;
+  gap: $space-xs;
+
+  &__cell {
+    @include input-style;
+  }
+
+  &__cell--green {
+    background: $green;
+    border-color: $green;
+    color: $bg;
+    animation: flip 0.5s ease forwards;
+  }
+
+  &__cell--grey {
+    background: $text-muted;
+    border-color: $text-muted;
+    color: $bg;
+    animation: flip 0.5s ease forwards;
+  }
+
+  &__cell--yellow {
+    background: $yellow;
+    border-color: $yellow;
+    color: $text;
+    animation: flip 0.5s ease forwards;
+  }
+
+  &--current &__cell--filled {
+    border-color: $text;
+    animation: bounce 0.2s ease-in-out forwards;
+  }
+
+  @media (max-width: 600px) {
+    &__cell {
+      width: 45px;
+      height: 45px;
+      line-height: 40px;
+      font-size: 30px;
+    }
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  45% {
+    transform: rotateX(90deg);
+  }
+  55% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

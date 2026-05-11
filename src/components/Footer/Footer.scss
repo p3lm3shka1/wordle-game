@@ -1,0 +1,27 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: $space-lg 0;
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    color: $text;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: $space-md 0;
+  }
+}

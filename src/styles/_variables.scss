@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75,300..700&display=swap");
+
+$font: "Fredoka", sans-serif;
+$bg: #f6f8fa;
+$text: #000000;
+$text-muted: #999;
+$green: #4caf50;
+$red: #f44336;
+$yellow: #ffeb3b;
+
+$shadow: 0 9px #999;
+$transition: all 0.1s ease-out;
+$radius: 12px;
+
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 3rem;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  font-size: 20px;
+  padding: $space-sm $space-lg;
+  margin: $space-xl 0;
+  border-radius: $radius;
+  background: $text;
+  color: $bg;
+  cursor: pointer;
+  border: none;
+  box-shadow: $shadow;
+  transition: $transition;
+
+  &:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+}
+
+@mixin input-style {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 2px solid $text-muted;
+  margin: $space-xs;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: $font;
+  font-weight: bold;
+  font-size: 40px;
+  color: $text;
+  background: $bg;
+  border-radius: $radius;
+  transition: $transition;
+}
+
+@mixin keypad-style {
+  width: 50px;
+  height: 50px;
+  border: 2px solid $text-muted;
+  border-radius: $radius;
+  background: $bg;
+  color: $text;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 47px;
+  text-transform: uppercase;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transition: $transition;
+
+  &:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+}

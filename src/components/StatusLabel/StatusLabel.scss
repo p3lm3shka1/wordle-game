@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.status {
+  @include flex-center;
+  flex-direction: column;
+
+  color: $text;
+
+  &__label {
+    text-align: center;
+    margin-top: $space-lg;
+    font-size: 40px;
+    color: $text;
+  }
+
+  .win {
+    color: $green;
+    font-size: 50px;
+  }
+
+  .lose {
+    color: $red;
+    font-size: 50px;
+  }
+
+  &__solution {
+    text-align: center;
+    margin-top: $space-sm;
+    font-size: 1em;
+    color: $text;
+
+    span {
+      font-weight: bold;
+      color: $red;
+      text-transform: uppercase;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__label {
+      font-size: 30px;
+    }
+  }
+}
