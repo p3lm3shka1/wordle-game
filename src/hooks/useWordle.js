@@ -9,7 +9,6 @@ const useWordle = (solution) => {
   const [usedKeys, setUsedKeys] = useState({});
 
   const formatGuess = () => {
-    // let solutioArray = [...solution];
     let solutionArray = [...solution];
 
     let formatttedGuess = [...currentGuess].map((letter, index) => {

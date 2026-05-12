@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { IoMenu } from "react-icons/io5";
+
 import "./Sidebar.scss";
 
 const Sidebar = ({ timerSeconds, setTimerSeconds }) => {
@@ -7,10 +9,6 @@ const Sidebar = ({ timerSeconds, setTimerSeconds }) => {
 
   useEffect(() => {
     if (!open) return;
-
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") setOpen(false);
-    };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -20,12 +18,17 @@ const Sidebar = ({ timerSeconds, setTimerSeconds }) => {
     setTimerSeconds(Number(e.target.value));
   };
 
+  const onKeyDown = (e) => {
+    if (e.key === "Escape") {
+      setOpen(false);
+    }
+  };
+
   return (
     <>
       <button
         className="sidebar__toggle"
         type="button"
-        aria-label="Open rules"
         onClick={() => setOpen(true)}
       >
         <IoMenu />
