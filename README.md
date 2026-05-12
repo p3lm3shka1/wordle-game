@@ -81,4 +81,6 @@ They are loaded in the app using:
 
 ## License
 
-This project is for learning and demo purposes.
+This project is for learning purposes.
+<br />
+Original https://www.nytimes.com/games/wordle/index.html
