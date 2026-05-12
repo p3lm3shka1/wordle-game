@@ -1,18 +1,23 @@
-import { useState, useEffect } from "react";
-
+import { useEffect, useState } from "react";
 import "./Timer.scss";
 
-const Timer = ({ setTimeIsOver, initialSeconds = 120 }) => {
+const Timer = ({ setTimeIsOver, initialSeconds = 120, resetSignal = 0 }) => {
   const [seconds, setSeconds] = useState(initialSeconds);
+
+  useEffect(() => {
+    setSeconds(initialSeconds);
+  }, [resetSignal, initialSeconds]);
 
   useEffect(() => {
     if (seconds <= 0) {
       setTimeIsOver(true);
       return;
     }
+
     const interval = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds - 1);
+      setSeconds((prev) => prev - 1);
     }, 1000);
+
     return () => clearInterval(interval);
   }, [seconds, setTimeIsOver]);
 

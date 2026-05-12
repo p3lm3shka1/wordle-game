@@ -1,0 +1,141 @@
+@use "../../styles/variables" as *;
+
+.sidebar__toggle {
+  position: fixed;
+  top: $space-sm;
+  left: $space-sm;
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: $radius;
+  background: $text;
+  color: $bg;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  box-shadow: $shadow;
+  transition: $transition;
+  z-index: 1001;
+
+  &:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.sidebar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: $transition;
+  z-index: 1000;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(360px, 88vw);
+  background: $bg;
+  color: $text;
+  padding: $space-lg;
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.15);
+
+  transform: translateX(-105%);
+  transition: $transition;
+  z-index: 1002;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__close {
+    position: absolute;
+    top: $space-sm;
+    right: $space-sm;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: $radius;
+    background: transparent;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      color: $text;
+    }
+  }
+
+  &__title {
+    font-family: $font;
+    font-size: 32px;
+    margin-bottom: $space-md;
+  }
+
+  &__rules p {
+    margin: $space-xs 0;
+    color: $text;
+  }
+
+  .green {
+    color: $green;
+  }
+  .yellow {
+    color: $yellow;
+  }
+  .grey {
+    color: $text-muted;
+  }
+
+  &__section {
+    margin-top: $space-lg;
+    padding-top: $space-md;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    margin-bottom: $space-sm;
+  }
+
+  &__range {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: $space-sm;
+
+    input[type="range"] {
+      width: 100%;
+    }
+  }
+
+  &__value {
+    margin-top: $space-sm;
+    color: $text-muted;
+
+    b {
+      color: $text;
+    }
+  }
+}

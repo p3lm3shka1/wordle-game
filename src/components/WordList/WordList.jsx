@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Wordle from "../Wordle/Wordle";
 import "./WordList.scss";
 
-const WordList = () => {
+const WordList = ({ timerSeconds, setTimerSeconds }) => {
   const [solution, setSolution] = useState(null);
 
   const generateNewSolution = () => {
@@ -23,7 +23,12 @@ const WordList = () => {
   return (
     <div className="solution">
       {solution && (
-        <Wordle solution={solution} onNewSolution={generateNewSolution} />
+        <Wordle
+          solution={solution}
+          onNewSolution={generateNewSolution}
+          timerSeconds={timerSeconds}
+          setTimerSeconds={setTimerSeconds}
+        />
       )}
     </div>
   );

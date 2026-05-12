@@ -4,11 +4,13 @@ import "./App.scss";
 
 import WordList from "./components/WordList/WordList";
 import StartScreen from "./components/StartScreen/StartScreen";
-import Footer from "./components/Footer/Footer";
+
+import Sidebar from "./components/Sidebar/Sidebar"; // <-- добавь
 
 function App() {
   const [started, setStarted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [timerSeconds, setTimerSeconds] = useState(120);
 
   const handleStart = () => {
     setLoading(true);
@@ -23,9 +25,17 @@ function App() {
       {!started ? (
         <StartScreen onStart={handleStart} loading={loading} />
       ) : (
-        <WordList />
+        <>
+          <Sidebar
+            timerSeconds={timerSeconds}
+            setTimerSeconds={setTimerSeconds}
+          />
+          <WordList
+            timerSeconds={timerSeconds}
+            setTimerSeconds={setTimerSeconds}
+          />
+        </>
       )}
-      <Footer />
     </>
   );
 }

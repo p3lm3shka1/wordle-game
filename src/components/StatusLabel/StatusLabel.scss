@@ -3,7 +3,6 @@
 .status {
   @include flex-center;
   flex-direction: column;
-
   color: $text;
 
   &__label {
@@ -30,9 +29,20 @@
     color: $text;
 
     span {
-      font-weight: bold;
-      color: $red;
+      font-weight: 800;
       text-transform: uppercase;
+    }
+  }
+
+  &--win {
+    .status__solution span {
+      color: $green;
+    }
+  }
+
+  &--lose {
+    .status__solution span {
+      color: $red;
     }
   }
 

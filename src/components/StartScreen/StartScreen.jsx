@@ -1,6 +1,8 @@
+import Footer from "../Footer/Footer";
+
 import "./StartScreen.scss";
 
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo-new.png";
 
 import { FiLoader } from "react-icons/fi";
 
@@ -20,6 +22,7 @@ const StartScreen = ({ onStart, loading }) => (
         <p>Loading game...</p>
       </div>
     )}
+    <Footer />
   </div>
 );
 
