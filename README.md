@@ -83,4 +83,4 @@ They are loaded in the app using:
 
 This project is for learning purposes.
 <br />
-Original https://www.nytimes.com/games/wordle/index.html
+Source: https://www.nytimes.com/games/wordle/index.html
